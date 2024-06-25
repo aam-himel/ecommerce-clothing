@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Router, Event, NavigationEnd } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { IStaticMethods } from 'preline/preline';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 declare global {
   interface Window {
     HSStaticMethods: IStaticMethods;
@@ -11,8 +12,8 @@ declare global {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
+  imports: [RouterOutlet, MainLayoutComponent],
+  template: `<router-outlet></router-outlet>`,
 })
 export class AppComponent {
   title = 'ecommerce-clothing';
